@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #outer {
+        background-color: gray;
+        margin: 0px auto;
+        width: 420px;
+        height: 620px;
+        padding-top: 10px;
+        border-radius: 10px;
+      }
+      .row {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box {
+        height: 90px;
+        width: 90px;
+        margin: 0px 5px;
+        background-color: white;
+      }
+      .eql {
+        background-color: black;
+        color: white;
+      }
+      #display {
+        width: 93%;
+        height: 85%;
+        text-align: right;
+        padding-right: 10px;
+      }
+      input {
+        font-size: 25px;
+        font-weight: bold;
+        border: 0;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all ease-in-out;
+      }
+
+      input:hover {
+        opacity: 0.7;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <form action="">
+        <div class="row">
+          <input type="text" placeholder="0" id="display" />
+        </div>
+
+        <div class="row">
+          <input type="reset" class="box" value="AC" />
+          <input
+            type="button"
+            class="box"
+            value="&larr;"
+            onclick="myDelete()"
+          />
+          <input type="button" class="box" onclick="addValue('%')" value="%" />
+          <input type="button" class="box" onclick="addValue('/')" value="/" />
+        </div>
+        <div class="row">
+          <input type="button" class="box" onclick="addValue('7')" value="7" />
+          <input type="button" class="box" onclick="addValue('8')" value="8" />
+          <input type="button" class="box" onclick="addValue('9')" value="9" />
+          <input type="button" class="box" onclick="addValue('*')" value="*" />
+        </div>
+        <div class="row">
+          <input type="button" class="box" onclick="addValue('4')" value="4" />
+          <input type="button" class="box" onclick="addValue('5')" value="5" />
+          <input type="button" class="box" onclick="addValue('6')" value="6" />
+          <input type="button" class="box" onclick="addValue('-')" value="-" />
+        </div>
+        <div class="row">
+          <input type="button" class="box" onclick="addValue('1')" value="1" />
+          <input type="button" class="box" onclick="addValue('2')" value="2" />
+          <input type="button" class="box" onclick="addValue('3')" value="3" />
+          <input type="button" class="box" onclick="addValue('+')" value="+" />
+        </div>
+        <div class="row">
+          <input
+            type="button"
+            class="box"
+            onclick="addValue('00')"
+            value="00"
+          />
+          <input type="button" class="box" onclick="addValue('0')" value="0" />
+          <input type="button" class="box" onclick="addValue('.')" value="." />
+          <input type="button" class="box eql" onclick="myEqual()" value="=" />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const key = [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "+",
+        "-",
+        "*",
+        "/",
+        "%",
+        "=",
+        "Enter",
+        "Backspace",
+        "Escape",
+      ];
+      
+      document.addEventListener("keyup", (event) => {
+        if (key.includes(event.key)) {
+          if (event.key === "=" || event.key === "Enter") {
+            myEqual();
+          } else if (event.key === "Backspace") {
+            myDelete();
+          } else if (event.key === "Escape") {
+            document.getElementById('display').value = null;
+          }  else {
+            addValue(event.key);
+          }
+        }
+      });
+
+      function addValue(data) {
+        document.getElementById("display").value += data;
+        // document.getElementById('display').value = document.getElementById('display').value + data;
+      }
+
+      function myEqual() {
+        var display = document.getElementById("display");
+        display.value = eval(display.value);
+      }
+
+      function myDelete() {
+        var display = document.getElementById("display");
+        display.value = display.value.substring(0, display.value.length - 1);
+      }
+    </script>
+  </body>
+</html>

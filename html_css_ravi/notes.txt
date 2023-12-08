@@ -1,0 +1,10 @@
+type of CSS
+1. Inline : Use style attribute for styling. For ex: style="color: red; background-color: yellow; border: 1px solid black;"
+2. Internal : Use style tag inside the head tag. For ex: <head><style>..........</style></head>
+3. External : Create a new .css file and import in HTML file using link tag. For ex: <link rel="stylesheet" href="css/style.css">
+
+
+
+Types of selector
+1. Tag selector : Use the name of tag to select any tag in intire page. For ex: h1 {....}, h2 {....}
+2. Class selector : Use . symbol and give any name what you want. For ex: .ravi_heading {....}

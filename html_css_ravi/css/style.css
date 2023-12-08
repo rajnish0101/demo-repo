@@ -1,0 +1,25 @@
+.ravi_heading {
+    background-color: yellow;
+    border: 2px solid blue;
+}
+
+.ravi_font {
+    font-size: 70px;
+}
+
+.ravi_color {
+    color: red;
+}
+
+h1 {
+    color: red;
+}
+
+#ravi_orange {
+    color: orange;
+}
+
+.ravi_image {
+    height: 100px;
+    width: 100px;
+}

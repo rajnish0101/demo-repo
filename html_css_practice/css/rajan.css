@@ -1,0 +1,26 @@
+.rajan_heading {
+    background-color: green;
+    border: 2px solid black;
+}
+.rajan_font {
+    font-size: 50;
+}
+
+.rajan_color {
+    color: red;
+}
+.ravi_img {
+    height: 200px;
+    width: 300px;
+}
+
+body {
+    background-image: url('../image/2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.ravi_input {
+    border: none;
+    outline: none;
+}
